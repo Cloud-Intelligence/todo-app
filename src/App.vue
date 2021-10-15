@@ -7,5 +7,5 @@ import Main from './components/Main.vue'
 </template>
 
 <style>
-@import 'src/assets/styles/styles.css';
+@import './assets/styles/styles.css';
 </style>
