@@ -26,6 +26,24 @@
     --check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 }
 
+body {
+    font-family: var(--font);
+    font-size: var(--body-height);
+    font-weight: var(--font-regular);
+}
+
+h1, h2, h3, h4 {
+    font-weight: var(--font-bold);
+    font-size: var(--header-height);
+    color: var(--dt-light-grayish-blue);
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 * {
     margin: 0;
 }
@@ -51,8 +69,12 @@
     align-items: center;
 }
 
+.container {
+    width: 600px;
+}
+
 .heading {
     display: flex;
     justify-content: space-between;
-    color: white;
 }
+
