@@ -30,11 +30,19 @@ body {
     font-family: var(--font);
     font-size: var(--body-height);
     font-weight: var(--font-regular);
+    color: var(--dt-light-grayish-blue);
 }
 
 h1, h2, h3, h4 {
     font-weight: var(--font-bold);
     font-size: var(--header-height);
+    color: var(--dt-light-grayish-blue);
+}
+
+button {
+    font-family: var(--font);
+    font-size: var(--body-height);
+    font-weight: var(--font-regular);
     color: var(--dt-light-grayish-blue);
 }
 
@@ -84,12 +92,41 @@ button {
     letter-spacing: 9px;
 }
 
+.create {
+    display: flex;
+    align-items: center;
+}
+
+.create .checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: none;
+    border-radius: 100vw;
+    border: 1px solid var(--dt-dark-grayish-blue);
+    margin-right: 2.5rem;
+}
+
+.create .input {
+    background: transparent;
+    border: 1px solid transparent;
+    outline: none;
+    height: 2rem;
+    color: var(--dt-light-grayish-blue);
+    padding: 0 .5rem;
+}
+
+.create .input:hover {
+    border: 1px solid var(--dt-very-dark-grayish-blue);
+    border-radius: 0.5rem;
+}
+
 .todos {
     background: var(--dt-very-dark-desaturated-blue);
     border-radius: 0.25rem;
 }
 
-.todos .todo {
+.todos .todo, .todos .completed {
     display: flex;
     align-items: center;
 }
@@ -100,19 +137,29 @@ button {
     padding: 0;
     border: none;
     border-radius: 100vw;
+    border: 1px solid var(--dt-dark-grayish-blue);
+    margin-right: 2.5rem;
+}
+
+.todos .completed .checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: none;
+    border-radius: 100vw;
     background-image: var(--check-background);
     margin-right: 2.5rem;
+}
+
+todos .completed .text {
+    text-decoration: line-through;
+    color: var(--dt-very-dark-grayish-blue);
 }
 
 .todos .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.todos .footer .display-select {
-    display: flex;
-    justify-content: space-between;
 }
 
 .todos .footer .display-select button {
@@ -124,5 +171,4 @@ button {
     border-radius: 0.25rem;
     margin-bottom: 25px;
     color: var(--dt-very-dark-grayish-blue);
-
 }
