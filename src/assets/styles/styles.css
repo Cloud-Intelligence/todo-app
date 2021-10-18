@@ -30,11 +30,19 @@ body {
     font-family: var(--font);
     font-size: var(--body-height);
     font-weight: var(--font-regular);
+    color: var(--dt-light-grayish-blue);
 }
 
 h1, h2, h3, h4 {
     font-weight: var(--font-bold);
     font-size: var(--header-height);
+    color: var(--dt-light-grayish-blue);
+}
+
+button {
+    font-family: var(--font);
+    font-size: var(--body-height);
+    font-weight: var(--font-regular);
     color: var(--dt-light-grayish-blue);
 }
 
@@ -110,11 +118,6 @@ button {
     align-items: center;
 }
 
-.todos .footer .display-select {
-    display: flex;
-    justify-content: space-between;
-}
-
 .todos .footer .display-select button {
     padding: 0 1rem;
 }
@@ -124,5 +127,4 @@ button {
     border-radius: 0.25rem;
     margin-bottom: 25px;
     color: var(--dt-very-dark-grayish-blue);
-
 }
