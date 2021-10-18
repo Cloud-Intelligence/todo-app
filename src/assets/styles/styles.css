@@ -80,6 +80,7 @@ button {
 .heading {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
 }
 
 .todos {
@@ -117,3 +118,10 @@ button {
     padding: 0 1rem;
 }
 
+.create {
+    background: var(--dt-very-dark-desaturated-blue);
+    border-radius: 0.25rem;
+    margin-bottom: 25px;
+    color: var(--dt-very-dark-grayish-blue);
+
+}
