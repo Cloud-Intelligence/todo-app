@@ -8,7 +8,7 @@
           <button><img src="../assets/images/icon-sun.svg"></button>
         </div>
 
-        <div class="create container" @click="addTodo = true">
+        <div class="create container" @click="openTodoInput">
           <button @click="addNewTodoItem" class="checkbox"><img src="../assets/images/icon-check.svg"></button>
           <h1 v-if="!addTodo">Create a todo...</h1>
           <input v-else @keyup.enter="addNewTodoItem" class="input" ref="todoItem">
@@ -88,6 +88,13 @@ export default {
     updateLocalStorage() {
       window.localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
       window.localStorage.setItem('completedItems', JSON.stringify(this.completedItems));
+    },
+    openTodoInput() {
+      this.addTodo = true
+
+      this.$nextTick(() => {
+        this.$refs['todoItem'].focus()
+      })
     },
   }
 }
