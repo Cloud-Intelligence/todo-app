@@ -14,12 +14,14 @@
           <input v-else @keyup.enter="addNewTodoItem" class="input" ref="todoItem">
         </div>
         <div class="todos">
-          <draggable v-model="todoItems" group="todos">
-            <div v-if="showTodos || showAll" v-for="(todoItem, index) in todoItems" class="todo container">
+          <draggable v-if="showTodos || showAll" v-model="todoItems" group="todos">
+            <div v-for="(todoItem, index) in todoItems" class="todo container">
               <button class="checkbox" @click="markCompleted(index)"></button>
               <p class="text">{{ todoItem }}</p>
             </div>
-            <div v-if="!showTodos || showAll" v-for="(completedItem, index) in completedItems" class="completed container">
+          </draggable>
+          <draggable v-if="!showTodos || showAll" v-model="completedItems" group="completedTodos">
+            <div v-for="(completedItem, index) in completedItems" class="completed container">
               <button class="checkbox" @click="unmarkCompleted(index)"><img src="../assets/images/icon-check.svg"></button>
               <p class="text">{{ completedItem }}</p>
             </div>
@@ -104,7 +106,7 @@ export default {
         this.$refs['todoItem'].focus()
       })
     },
-  }
+  },
 }
 </script>
 
