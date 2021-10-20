@@ -114,9 +114,9 @@ button {
 .container {
     padding: 1rem;
     background: var(--container-background);
-    -webkit-box-shadow: 0 8px 10px -10px black;
-    -moz-box-shadow: 0 8px 10px -10px black;
-    box-shadow: 0 8px 12px -10px black;
+    -webkit-box-shadow: 0 8px 12px -12px black;
+    -moz-box-shadow: 0 8px 12px -12px black;
+    box-shadow: 0 8px 12px -12px black;
 }
 
 .box {
