@@ -14,14 +14,18 @@
           <input v-else @keyup.enter="addNewTodoItem" class="input" ref="todoItem">
         </div>
         <div class="todos">
-          <div v-if="showTodos || showAll" v-for="(todoItem, index) in todoItems" class="todo container">
-            <button class="checkbox" @click="markCompleted(index)"></button>
-            <p class="text">{{ todoItem }}</p>
-          </div>
-          <div v-if="!showTodos || showAll" v-for="(completedItem, index) in completedItems" class="completed container">
-            <button class="checkbox" @click="unmarkCompleted(index)"><img src="../assets/images/icon-check.svg"></button>
-            <p class="text">{{ completedItem }}</p>
-          </div>
+          <draggable v-if="showTodos || showAll" v-model="todoItems" group="todos">
+            <div v-for="(todoItem, index) in todoItems" class="todo container">
+              <button class="checkbox" @click="markCompleted(index)"></button>
+              <p class="text">{{ todoItem }}</p>
+            </div>
+          </draggable>
+          <draggable v-if="!showTodos || showAll" v-model="completedItems" group="completedTodos">
+            <div v-for="(completedItem, index) in completedItems" class="completed container">
+              <button class="checkbox" @click="unmarkCompleted(index)"><img src="../assets/images/icon-check.svg"></button>
+              <p class="text">{{ completedItem }}</p>
+            </div>
+          </draggable>
           <div class="footer container">
             <p>{{ todoItems.length }} Items left</p>
             <div class="footer-toes">
@@ -38,6 +42,9 @@
 </template>
 
 <script>
+
+import { VueDraggableNext } from 'vue-draggable-next';
+
 export default {
   name: "Main",
   data() {
@@ -52,6 +59,9 @@ export default {
   mounted() {
     this.todoItems = JSON.parse(window.localStorage.getItem('todoItems')) ?? [];
     this.completedItems = JSON.parse(window.localStorage.getItem('completedItems')) ?? [];
+  },
+  components: {
+    draggable: VueDraggableNext,
   },
   methods: {
     markCompleted(index) {
@@ -96,7 +106,7 @@ export default {
         this.$refs['todoItem'].focus()
       })
     },
-  }
+  },
 }
 </script>
 
