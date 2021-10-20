@@ -1,32 +1,32 @@
 <template>
-  <section id="main" class="main">
+  <section id="main" class="main" :data-theme="darkTheme? 'dark': 'light'">
     <img src="../assets/images/bg-desktop-dark.jpg" class="background-img">
     <div class="body">
       <section class="body-container">
         <div class="heading">
           <h1>TODO</h1>
-          <button><img src="../assets/images/icon-sun.svg"></button>
+          <button><img src="../assets/images/icon-sun.svg" @click="toggleTheme"></button>
         </div>
 
         <div class="create container" @click="openTodoInput">
           <button @click="addNewTodoItem" class="checkbox"><img src="../assets/images/icon-check.svg"></button>
-          <h1 v-if="!addTodo">Create a todo...</h1>
+          <p v-if="!addTodo">Create a todo...</p>
           <input v-else @keyup.enter="addNewTodoItem" class="input" ref="todoItem">
         </div>
-        <div class="todos">
+        <div class="todos container">
           <draggable v-if="showTodos || showAll" v-model="todoItems" group="todos">
-            <div v-for="(todoItem, index) in todoItems" class="todo container">
+            <div v-for="(todoItem, index) in todoItems" class="todo box">
               <button class="checkbox" @click="markCompleted(index)"></button>
               <p class="text">{{ todoItem }}</p>
             </div>
           </draggable>
           <draggable v-if="!showTodos || showAll" v-model="completedItems" group="completedTodos">
-            <div v-for="(completedItem, index) in completedItems" class="completed container">
+            <div v-for="(completedItem, index) in completedItems" class="completed box">
               <button class="checkbox" @click="unmarkCompleted(index)"><img src="../assets/images/icon-check.svg"></button>
               <p class="text">{{ completedItem }}</p>
             </div>
           </draggable>
-          <div class="footer container">
+          <div class="footer box">
             <p>{{ todoItems.length }} Items left</p>
             <div class="footer-toes">
               <button @click="showAll = true" :style="showAll ? 'color: var(--bright-blue)' : ''">All</button>
@@ -54,9 +54,10 @@ export default {
       showTodos: true,
       showAll: false,
       addTodo: false,
+      darkTheme: true,
     }
   },
-  mounted() {
+  mounted () {
     this.todoItems = JSON.parse(window.localStorage.getItem('todoItems')) ?? [];
     this.completedItems = JSON.parse(window.localStorage.getItem('completedItems')) ?? [];
   },
@@ -106,10 +107,9 @@ export default {
         this.$refs['todoItem'].focus()
       })
     },
+    toggleTheme() {
+      this.darkTheme = !this.darkTheme;
+    }
   },
 }
 </script>
-
-<style scoped>
-
-</style>
