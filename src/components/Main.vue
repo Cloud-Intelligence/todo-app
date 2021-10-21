@@ -17,18 +17,20 @@
           <input v-else @keyup.enter="addNewTodoItem" class="input" ref="todoItem">
         </div>
         <div class="todos container">
-          <draggable v-if="showTodos || showAll" v-model="todoItems" group="todos">
-            <div v-for="(todoItem, index) in todoItems" class="todo box">
-              <button class="checkbox" @click="markCompleted(index)"></button>
-              <p class="text">{{ todoItem }}</p>
-            </div>
-          </draggable>
-          <draggable v-if="!showTodos || showAll" v-model="completedItems" group="completedTodos">
-            <div v-for="(completedItem, index) in completedItems" class="completed box">
-              <button class="checkbox" @click="unmarkCompleted(index)"><check-icon></check-icon></button>
-              <p class="text">{{ completedItem }}</p>
-            </div>
-          </draggable>
+          <div class="list">
+            <draggable v-if="showTodos || showAll" v-model="todoItems" group="todos">
+              <div v-for="(todoItem, index) in todoItems" class="todo box">
+                <button class="checkbox" @click="markCompleted(index)"></button>
+                <p class="text">{{ todoItem }}</p>
+              </div>
+            </draggable>
+            <draggable v-if="!showTodos || showAll" v-model="completedItems" group="completedTodos">
+              <div v-for="(completedItem, index) in completedItems" class="completed box">
+                <button class="checkbox" @click="unmarkCompleted(index)"><check-icon></check-icon></button>
+                <p class="text">{{ completedItem }}</p>
+              </div>
+            </draggable>
+          </div>
           <div class="footer box">
             <p>{{ todoItems.length }} Items left</p>
             <div class="footer-toes">
