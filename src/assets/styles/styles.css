@@ -159,6 +159,9 @@ button {
 }
 
 .todos {
+    background: var(--dt-very-dark-desaturated-blue);
+    max-height: 90%;
+    overflow: auto;
     border-radius: 0.25rem;
 }
 
