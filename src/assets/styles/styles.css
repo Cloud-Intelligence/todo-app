@@ -91,6 +91,19 @@ button {
     background: var(--background);
 }
 
+.logo {
+    position: absolute;
+    background-image: url("src/assets/images/logo-06.png");
+    height: 208px;
+    width: 312px;
+    background-size: cover;
+    background-position: center;
+    left: 50vw;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
 .background-img {
     width: 100%;
 }
@@ -222,4 +235,14 @@ todos .list .completed .text {
     border-radius: 0.25rem;
     margin-bottom: 25px;
     color: var(--dt-very-dark-grayish-blue);
+}
+
+.CI-link {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+a {
+    color: hsl(200, 73%, 61%);
 }
