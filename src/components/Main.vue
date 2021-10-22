@@ -42,7 +42,7 @@
             <button @click="clearCompleted">Clear Completed</button>
           </div>
         </div>
-        <p class="CI-link">Made with love by <a href="https://cloudintelligence.co.za/">Cloud Intelligence</a> interns</p>
+        <p class="CI-link">Made with ❤️ by <a href="https://cloudintelligence.co.za/">Cloud Intelligence</a> interns</p>
       </section>
     </div>
   </section>
