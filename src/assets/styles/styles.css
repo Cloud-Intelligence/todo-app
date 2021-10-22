@@ -74,7 +74,7 @@ body {
 
 @supports (scrollbar-color: red blue) {
     * {
-        scrollbar-color: var(--content-colour) var(--body-colour);
+        scrollbar-color: var(--hover-color) var(--container-background);
         scrollbar-width: thin;
     }
 }
