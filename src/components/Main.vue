@@ -61,7 +61,7 @@ export default {
       todoItems: [],
       completedItems: [],
       showTodos: true,
-      showAll: false,
+      showAll: true,
       addTodo: false,
       darkTheme: true,
     }
