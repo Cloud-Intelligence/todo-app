@@ -108,7 +108,7 @@ button {
 
 .body-container {
     width: 600px;
-    min-height: 60%;
+    height: 60%;
 }
 
 .container {
@@ -159,25 +159,31 @@ button {
 }
 
 .todos {
+    background: var(--container-background);
     border-radius: 0.25rem;
 }
 
-.todos .todo, .todos .completed {
+.todos .list {
+    max-height: 45vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.todos .list .todo, .todos .list .completed {
     display: flex;
     align-items: center;
 }
 
-.todos .todo .checkbox {
+.todos .list .todo .checkbox {
     width: 1.5rem;
     height: 1.5rem;
     padding: 0;
-    border: none;
     border-radius: 100vw;
-    border: 1px solid var(--dt-dark-grayish-blue);
+    border: 1px solid var(--checkbox-border);
     margin-right: 2.5rem;
 }
 
-.todos .completed .checkbox {
+.todos .list .completed .checkbox {
     width: 1.5rem;
     height: 1.5rem;
     padding: 0;
@@ -187,7 +193,7 @@ button {
     margin-right: 2.5rem;
 }
 
-todos .completed .text {
+todos .list .completed .text {
     text-decoration: line-through;
     color: var(--dt-very-dark-grayish-blue);
 }
