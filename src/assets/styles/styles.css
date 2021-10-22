@@ -37,7 +37,7 @@
     --container-background: white;
     --checkbox-border: var(--dt-dark-grayish-blue);
     --grayed-color: var(--lt-very-dark-grayish-blue);
-    --backgrond: white;
+    --background: var(--dt-very-light-grayish-blue);
 }
 
 [data-theme="dark"] {
