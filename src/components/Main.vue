@@ -5,11 +5,14 @@
       <section class="body-container">
         <div class="heading">
           <h1>TODO</h1>
-          <button><img src="../assets/images/icon-sun.svg" @click="toggleTheme"></button>
+          <button>
+            <sun-icon v-if="darkTheme" @click="toggleTheme"></sun-icon>
+            <MoonIcon v-else @click="toggleTheme"></MoonIcon>
+          </button>
         </div>
 
         <div class="create container" @click="openTodoInput">
-          <button @click="addNewTodoItem" class="checkbox"><img src="../assets/images/icon-check.svg"></button>
+          <button @click="addNewTodoItem" class="checkbox"><check-icon class="check"></check-icon></button>
           <p v-if="!addTodo">Create a todo...</p>
           <input v-else @keyup.enter="addNewTodoItem" class="input" ref="todoItem">
         </div>
@@ -22,7 +25,7 @@
           </draggable>
           <draggable v-if="!showTodos || showAll" v-model="completedItems" group="completedTodos">
             <div v-for="(completedItem, index) in completedItems" class="completed box">
-              <button class="checkbox" @click="unmarkCompleted(index)"><img src="../assets/images/icon-check.svg"></button>
+              <button class="checkbox" @click="unmarkCompleted(index)"><check-icon></check-icon></button>
               <p class="text">{{ completedItem }}</p>
             </div>
           </draggable>
@@ -45,6 +48,10 @@
 
 import { VueDraggableNext } from 'vue-draggable-next';
 
+import CheckIcon from '../assets/images/icon-check.svg';
+import SunIcon from '../assets/images/icon-sun.svg';
+import MoonIcon from '../assets/images/icon-moon.svg';
+
 export default {
   name: "Main",
   data() {
@@ -63,6 +70,9 @@ export default {
   },
   components: {
     draggable: VueDraggableNext,
+    CheckIcon,
+    SunIcon,
+    MoonIcon,
   },
   methods: {
     markCompleted(index) {
