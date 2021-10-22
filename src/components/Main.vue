@@ -23,12 +23,14 @@
               <div v-for="(todoItem, index) in todoItems" class="todo box">
                 <button class="checkbox" @click="markCompleted(index)"></button>
                 <p class="text">{{ todoItem }}</p>
+                <button class="delete-todo" @click="deleteTodo(index)"><cross-icon></cross-icon></button>
               </div>
             </draggable>
             <draggable v-if="!showTodos || showAll" v-model="completedItems" group="completedTodos">
               <div v-for="(completedItem, index) in completedItems" class="completed box">
                 <button class="checkbox" @click="unmarkCompleted(index)"><check-icon></check-icon></button>
                 <p class="text">{{ completedItem }}</p>
+                <button class="delete-todo" @click="deleteCompleted(index)"><cross-icon></cross-icon></button>
               </div>
             </draggable>
           </div>
@@ -54,6 +56,7 @@ import { VueDraggableNext } from 'vue-draggable-next';
 import CheckIcon from '../assets/images/icon-check.svg';
 import SunIcon from '../assets/images/icon-sun.svg';
 import MoonIcon from '../assets/images/icon-moon.svg';
+import CrossIcon from '../assets/images/icon-cross.svg';
 
 export default {
   name: "Main",
@@ -76,6 +79,7 @@ export default {
     CheckIcon,
     SunIcon,
     MoonIcon,
+    CrossIcon,
   },
   methods: {
     markCompleted(index) {
@@ -107,6 +111,14 @@ export default {
       this.todoItems.push(item);
       this.$refs['todoItem'].value = '';
       this.addTodo = false;
+      this.updateLocalStorage();
+    },
+    deleteTodo(index) {
+      this.todoItems.splice(index, 1);
+      this.updateLocalStorage();
+    },
+    deleteCompleted(index) {
+      this.completedItems.splice(index, 1);
       this.updateLocalStorage();
     },
     updateLocalStorage() {
