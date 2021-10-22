@@ -1,5 +1,7 @@
 <template>
   <section id="main" class="main" :data-theme="darkTheme? 'dark': 'light'">
+    <img src="../assets/images/CloudIntelligence.gif" class="logoGif">
+    <img src="../assets/images/logo-06.png" class="logo">
     <img src="../assets/images/bg-desktop-dark.jpg" class="background-img">
     <div class="body">
       <section class="body-container">
@@ -41,6 +43,7 @@
             <button @click="clearCompleted">Clear Completed</button>
           </div>
         </div>
+        <p class="CI-link">Made with love by <a href="https://cloudintelligence.co.za/">Cloud Intelligence</a> interns</p>
       </section>
     </div>
   </section>
