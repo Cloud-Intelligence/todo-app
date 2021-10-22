@@ -165,7 +165,8 @@ button {
 
 .todos .list {
     max-height: 45vh;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .todos .list .todo, .todos .list .completed {
