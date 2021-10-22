@@ -159,7 +159,7 @@ button {
 }
 
 .todos {
-    background: var(--dt-very-dark-desaturated-blue);
+    background: var(--container-background);
     border-radius: 0.25rem;
 }
 
@@ -178,7 +178,7 @@ button {
     height: 1.5rem;
     padding: 0;
     border-radius: 100vw;
-    border: 1px solid var(--dt-dark-grayish-blue);
+    border: 1px solid var(--checkbox-border);
     margin-right: 2.5rem;
 }
 
