@@ -92,15 +92,16 @@ button {
 }
 
 .logo {
-    width: 100%;
-    height: 20%;
     position: absolute;
-}
-
-.logoGif {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    background-image: url("src/assets/images/logo-06.png");
+    height: 208px;
+    width: 312px;
+    background-size: cover;
+    background-position: center;
+    left: 50vw;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 4;
 }
 
 .background-img {
