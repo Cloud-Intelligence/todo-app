@@ -58,6 +58,27 @@ body {
     color: var(--font-color);
 }
 
+::-webkit-scrollbar {
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    margin-block: .25rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hover-color);
+    border-radius: 100vw;
+}
+
+@supports (scrollbar-color: red blue) {
+    * {
+        scrollbar-color: var(--hover-color) var(--container-background);
+        scrollbar-width: thin;
+    }
+}
+
 h1, h2, h3, h4 {
     font-weight: var(--font-bold);
     font-size: var(--header-height);
