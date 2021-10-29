@@ -3,7 +3,7 @@
     <img v-if="darkTheme" src="../assets/images/icelandDarkBackground-unsplash.jpg" class="background-img">
     <img v-else src="../assets/images/rudy-dong-lightBackground-unsplash.jpg" class="background-img">
     <div class="body">
-      <section class="body-container">
+      <section class="body-containe
         <div class="heading">
           <h1>TODO</h1>
           <button>
