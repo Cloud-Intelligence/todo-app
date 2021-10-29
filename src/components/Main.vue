@@ -1,7 +1,7 @@
 <template>
   <section id="main" class="main" :data-theme="darkTheme? 'dark': 'light'">
     <img v-if="darkTheme" src="../assets/images/icelandDarkBackground-unsplash.jpg" class="background-img">
-    <img v-else src="../assets/images/rudy-dong-TSVpa7srdtA-unsplash.jpg" class="background-img">
+    <img v-else src="../assets/images/rudy-dong-lightBackground-unsplash.jpg" class="background-img">
     <div class="body">
       <section class="body-container">
         <div class="heading">
