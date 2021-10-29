@@ -58,6 +58,27 @@ body {
     color: var(--font-color);
 }
 
+::-webkit-scrollbar {
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    margin-block: .25rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hover-color);
+    border-radius: 100vw;
+}
+
+@supports (scrollbar-color: red blue) {
+    * {
+        scrollbar-color: var(--hover-color) var(--container-background);
+        scrollbar-width: thin;
+    }
+}
+
 h1, h2, h3, h4 {
     font-weight: var(--font-bold);
     font-size: var(--header-height);
@@ -89,6 +110,19 @@ button {
     height:100vh;
     width: 100vw;
     background: var(--background);
+}
+
+.logo {
+    position: absolute;
+    background-image: url("src/assets/images/logo-06.png");
+    height: 208px;
+    width: 312px;
+    background-size: cover;
+    background-position: center;
+    left: 50vw;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 4;
 }
 
 .background-img {
@@ -232,4 +266,14 @@ button {
     border-radius: 0.25rem;
     margin-bottom: 25px;
     color: var(--dt-very-dark-grayish-blue);
+}
+
+.CI-link {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+a {
+    color: hsl(200, 73%, 61%);
 }

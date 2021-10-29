@@ -44,6 +44,7 @@
             <button @click="clearCompleted">Clear Completed</button>
           </div>
         </div>
+        <p class="CI-link">Made with ❤️ by <a href="https://cloudintelligence.co.za/">Cloud Intelligence</a> interns</p>
       </section>
     </div>
   </section>
@@ -65,7 +66,7 @@ export default {
       todoItems: [],
       completedItems: [],
       showTodos: true,
-      showAll: false,
+      showAll: true,
       addTodo: false,
       darkTheme: true,
     }
